@@ -53,6 +53,7 @@
 
 <script>
 export default {
+  name: 'CompoundInterest',
   props: {
     msg: String,
   },
@@ -70,13 +71,13 @@ export default {
       let TotalMoney = 0;
       const td = document.querySelector('.td');
       let total = '';
-      for (let i = 1; i <= this.year; i + 1) {
+      for (let i = 1; i <= this.year; i += 1) {
         coinTotal += this.coin * 12;
         befint = Math.round((this.coin * 12 + TotalMoney) * (this.rest / 100));
         TotalMoney = Math.round(this.coin * 12 + TotalMoney + befint);
         total += `
         <tr>
-            <td>'第' + i + '年'</td>
+            <td>第${i}年</td>
             <td>${coinTotal.toLocaleString()}</td>
             <td>${TotalMoney.toLocaleString()}</td>
             <td>${befint.toLocaleString()}</td>
