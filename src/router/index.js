@@ -22,6 +22,11 @@ export default new VueRouter({
       name: 'TodoList',
       component: () => import('@/views/TodoList.vue'),
     },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: () => import('@/views/Login.vue'),
+    },
     ],
   },
   {

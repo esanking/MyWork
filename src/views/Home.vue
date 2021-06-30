@@ -28,8 +28,10 @@
           :key="key"
           :to="{ path: item.link }"
           class="WorkItem col-md-4 col-sm-12"
-          ><li :style="{
-          backgroundImage: `url(${ item.img })` }"
+          ><li
+            :style="{
+              backgroundImage: `url(${item.img})`,
+            }"
           >
             <div class="Overlay">
               <p>{{ item.title }}</p>
@@ -43,6 +45,7 @@
 <script>
 import StockImg from '@/assets/img/Stock.png';
 import TodoImg from '@/assets/img/TodoList.png';
+import Login from '@/assets/img/Login.png';
 
 export default {
   data() {
@@ -57,6 +60,11 @@ export default {
           img: TodoImg,
           link: '/TodoList',
           title: 'TodoList',
+        },
+        {
+          img: Login,
+          link: '/Login',
+          title: 'Login',
         },
       ],
     };
@@ -149,10 +157,24 @@ ul {
     }
   }
 }
+@media (max-width: 991px) {
+  .WorkItem {
+    li {
+      .Overlay {
+        width: 216px;
+        height: 200px;
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   .WorkItem {
-    // flex-direction: column;
-    // align-items: center;
+    li {
+      .Overlay {
+        width: 300px;
+        height: 200px;
+      }
+    }
   }
 }
 
