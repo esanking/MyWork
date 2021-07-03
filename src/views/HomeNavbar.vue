@@ -1,20 +1,20 @@
 <template>
   <div class="wrap">
-    <nav class="navbar bg-light">
+    <nav class="navbar bg-dark">
       <div class="container-fluid">
         <router-link to="/" class="RouterLink"
           ><h1 class="WebIcon">蚊子工具網</h1></router-link
         >
       </div>
     </nav>
-    <div class="container-md mb-5">
+    <div class="container-md bg-info">
       <router-view></router-view>
     </div>
-    <footer class="w-100 p-5 bg-light footer">
+    <footer class="w-100 p-5 bg-dark footer">
       <h1 class="WebIcon">蚊子工具網</h1>
       <ul>
         <li>
-          <i class="far fa-envelope IconSz"></i><span>asd500373@gmail.com</span>
+          <i class="far fa-envelope IconSz"> asd500373@gmail.com</i>
         </li>
         <li>
           <a href="https://github.com/esanking"
@@ -43,11 +43,10 @@
   flex: 1;
 }
 .WebIcon {
-  background: linear-gradient(to top, #723fd1, #d8939a, #d8671b);
-  background: -webkit-linear-gradient(to top, #3a1c71, #d76d77, #ffaf7b);
   background-clip: text;
+  font-family: cursive, fantasy, "Microsoft JhengHei";
   -webkit-background-clip: text;
-  color: transparent;
+  color: rgb(21, 82, 29);
 }
 li {
   list-style-type: none;
@@ -56,7 +55,7 @@ li {
   display: flex;
   justify-content: space-evenly;
   .IconSz {
-    font-size: 28px;
+    font-size: 24px;
     margin-right: 10px;
   }
 }

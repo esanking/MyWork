@@ -1,5 +1,5 @@
 <template>
-  <div class="ToolWeb bg-dark">
+  <div class="ToolWeb">
     <div class="PersonalProfile">
       <h3 class="title text-primary">Personal Profile</h3>
       <p class="Border"></p>

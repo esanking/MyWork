@@ -1,6 +1,6 @@
 <template>
   <div class="TodoList">
-    <div class="w-100 d-flex align-items-center flex-column bg-light p-5 mt-1">
+    <div class="w-100 d-flex align-items-center flex-column bg-light p-5 ">
       <h3 class="text-primary">Add Todo</h3>
       <div class="d-flex align-items-center">
         <input
@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <div class="w-100 d-flex align-items-center flex-column bg-dark py-2">
+    <div class="w-100 d-flex align-items-center flex-column bg-light py-2">
       <h3 class="text-primary">My TodoList</h3>
       <ul class="w-75">
         <li v-for="(item, key) in todo" :key="key" class="mt-1 bg-light">
