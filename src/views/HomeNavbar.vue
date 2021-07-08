@@ -1,16 +1,16 @@
 <template>
   <div class="wrap">
-    <nav class="navbar bg-dark">
+    <nav class="navbar bg-info">
       <div class="container-fluid">
         <router-link to="/" class="RouterLink"
           ><h1 class="WebIcon">蚊子工具網</h1></router-link
         >
       </div>
     </nav>
-    <div class="container-md bg-info">
+    <div class="container-md bg-success">
       <router-view></router-view>
     </div>
-    <footer class="w-100 p-5 bg-dark footer">
+    <footer class="w-100 py-5 bg-dark footer">
       <h1 class="WebIcon">蚊子工具網</h1>
       <ul>
         <li>
@@ -46,7 +46,7 @@
   background-clip: text;
   font-family: cursive, fantasy, "Microsoft JhengHei";
   -webkit-background-clip: text;
-  color: rgb(21, 82, 29);
+  color: #CCFF66;
 }
 li {
   list-style-type: none;
@@ -54,9 +54,11 @@ li {
 .footer {
   display: flex;
   justify-content: space-evenly;
+  color: #CCFF66;
   .IconSz {
     font-size: 24px;
     margin-right: 10px;
+    color: #CCFF66;
   }
 }
 @media (max-width: 767px) {

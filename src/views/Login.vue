@@ -1,6 +1,6 @@
 <template>
   <div class="Login">
-    <form class="Form bg-dark p-3" v-if="ChangeFrom">
+    <form class="Form bg-dark p-3 text-white" v-if="ChangeFrom">
       <h3>登入系統</h3>
       <label for="account" class="form-label">帳號</label>
       <input
@@ -12,7 +12,7 @@
         name="number"
         v-validate="'required'"
       />
-      <span class="text-danger mb-2" v-if="errors.has('number')"
+      <span class="text-success mb-2" v-if="errors.has('number')"
         >請填寫帳號欄位</span
       >
       <label for="password" class="form-label">密碼</label>
@@ -25,23 +25,23 @@
         name="password"
         v-validate="'required'"
       />
-      <span class="text-danger mb-2" v-if="errors.has('password')"
+      <span class="text-success mb-2" v-if="errors.has('password')"
         >請填寫密碼欄位</span
       >
       <div class="d-flex justify-content-around w-100">
         <button
           type="button"
-          class="btn btn-outline-danger"
+          class="btn btn-danger"
           @click="ClickChangeFrom"
         >
           去註冊
         </button>
-        <button type="button" class="btn btn-outline-primary" @click="Login">
+        <button type="button" class="btn btn-primary" @click="Login">
           登入
         </button>
       </div>
     </form>
-    <form class="Form bg-dark p-3" v-if="!ChangeFrom">
+    <form class="Form bg-dark p-3 text-white" v-if="!ChangeFrom">
       <h3>註冊系統</h3>
       <label for="account" class="form-label">帳號</label>
       <input
@@ -53,7 +53,7 @@
         name="number"
         v-validate="'required'"
       />
-      <span class="text-danger mb-2" v-if="errors.has('number')"
+      <span class="text-success mb-2" v-if="errors.has('number')"
         >請填寫帳號欄位</span
       >
       <label for="password" class="form-label">密碼</label>
@@ -66,18 +66,18 @@
         name="password"
         v-validate="'required'"
       />
-      <span class="text-danger mb-2" v-if="errors.has('password')"
+      <span class="text-success mb-2" v-if="errors.has('password')"
         >請填寫密碼欄位</span
       >
       <div class="d-flex justify-content-around w-100">
         <button
           type="button"
-          class="btn btn-outline-danger"
+          class="btn btn-danger"
           @click="ClickChangeFrom"
         >
           去登入
         </button>
-        <button type="button" class="btn btn-outline-primary" @click="SignUp">
+        <button type="button" class="btn btn-primary" @click="SignUp">
           註冊
         </button>
       </div>

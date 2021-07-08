@@ -1,7 +1,7 @@
 <template>
-  <div class="w-100 bg-warning">
+  <div class="w-100">
     <div class="header pt-4">
-      <div class="title w-100 text-center text-primary">股票複利試算</div>
+      <h3 class="w-100 text-center text-primary">股票複利試算</h3>
     </div>
     <div class="main w-100 mt-4">
       <div class="outside w-100 d-flex justify-content-center">
@@ -9,7 +9,7 @@
           class="circle w-75 h-100 border border-primary d-flex flex-column"
           style="font-size: 16px"
         >
-          <ul style="">
+          <ul>
             <li class="m-2 d-flex align-items-center justify-content-center">
               <label for="" class="text-primary w-25">每月存入</label>
               <input type="number" v-model="coin" class="coin w-50" />
