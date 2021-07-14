@@ -1,6 +1,9 @@
 <template>
   <div class="ToolWeb">
-    <div class="PersonalProfile">
+    <div class="BgCoding bg-info">
+      <a href="#PersonalProfile"><i class="fas fa-angle-down"></i></a>
+    </div>
+    <div id="PersonalProfile" class="PersonalProfile py-3">
       <h3 class="title text-primary">Personal Profile</h3>
       <p class="Border"></p>
       <div class="Profile">
@@ -17,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="Works">
+    <div class="Works pb-4">
       <div class="WorksTitle">
         <h3 class="title text-primary">My works</h3>
         <div class="Border"></div>
@@ -27,8 +30,9 @@
           v-for="(item, key) in works"
           :key="key"
           :to="{ path: item.link }"
-          class="WorkItem col-md-4 col-sm-12"
+          class="WorkItem col-xl-4 col-md-6 col-sm-12"
           ><li
+          class="border border-2"
             :style="{
               backgroundImage: `url(${item.img})`,
             }"
@@ -72,6 +76,22 @@ export default {
 };
 </script>
 <style lang="scss">
+.BgCoding {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 50px;
+  background-image: url('~@/assets/img/Code1.svg');
+  background-repeat:no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  i {
+    color: #fff;
+    text-decoration: none;
+    font-size: 36px;
+  }
+}
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -80,7 +100,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
   .Profile {
     width: 100%;
     height: 100%;
@@ -161,7 +180,7 @@ ul {
   .WorkItem {
     li {
       .Overlay {
-        width: 216px;
+        max-width: 300px;
         height: 200px;
       }
     }

@@ -7,7 +7,7 @@
         >
       </div>
     </nav>
-    <div class="container-md bg-success">
+    <div class="Container bg-success">
       <router-view></router-view>
     </div>
     <footer class="w-100 py-5 bg-dark footer">
@@ -33,12 +33,19 @@
   flex-direction: column;
   min-height: 100vh;
 }
+.navbar {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  height: 56px;
+}
+.MtMargin {
+  margin-top: 56px;
+}
 .RouterLink {
   text-decoration: none;
 }
-.container-md {
-  padding-right: 0;
-  padding-left: 0;
+.Container {
   height: 100%;
   flex: 1;
 }

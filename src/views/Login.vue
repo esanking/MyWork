@@ -1,5 +1,5 @@
 <template>
-  <div class="Login">
+  <div class="Login MtMargin">
     <form class="Form bg-dark p-3 text-white" v-if="ChangeFrom">
       <h3>登入系統</h3>
       <label for="account" class="form-label">帳號</label>

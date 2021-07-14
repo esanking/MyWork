@@ -1,5 +1,5 @@
 <template>
-  <div class="TodoList">
+  <div class="TodoList MtMargin">
     <div class="w-100 d-flex align-items-center flex-column p-5 ">
       <h3 class="text-primary">Add Todo</h3>
       <div class="d-flex align-items-center">

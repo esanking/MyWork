@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100">
+  <div class="w-100 MtMargin">
     <div class="header pt-4">
       <h3 class="w-100 text-center text-primary">股票複利試算</h3>
     </div>
