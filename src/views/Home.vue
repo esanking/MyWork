@@ -1,13 +1,20 @@
 <template>
   <div class="ToolWeb">
-    <div class="BgCoding bg-info">
-      <a href="#PersonalProfile"><i class="fas fa-angle-down"></i></a>
+    <div class="BgImg bg-info">
+      <div class="Bgtext">
+        <h1>
+          <p class="BgText1">HELLO I'M</p>
+          <p class="BgText2">WY HUANG</p>
+        </h1>
+      </div>
     </div>
     <div id="PersonalProfile" class="PersonalProfile py-3">
       <h3 class="title text-primary">Personal Profile</h3>
       <p class="Border"></p>
       <div class="Profile">
-        <div class="FilePhoto"></div>
+        <div class="FilePhotoCss">
+          <div class="FilePhoto"></div>
+        </div>
         <div class="ProfileText">
           <h3>黃文毅 ( WEN - YI - HUANG )</h3>
           <p>
@@ -20,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="Works pb-4">
+    <div class="Works pb-4 container">
       <div class="WorksTitle">
         <h3 class="title text-primary">My works</h3>
         <div class="Border"></div>
@@ -31,17 +38,17 @@
           :key="key"
           :to="{ path: item.link }"
           class="WorkItem col-xl-4 col-md-6 col-sm-12"
-          ><li
-          class="border border-2"
+          >
+          <li>
+            <div class="border border-2 worksImg"
             :style="{
               backgroundImage: `url(${item.img})`,
-            }"
-          >
+            }">
             <div class="Overlay">
               <p>{{ item.title }}</p>
-            </div>
-          </li></router-link
-        >
+            </div></div>
+          </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -76,25 +83,36 @@ export default {
 };
 </script>
 <style lang="scss">
-.BgCoding {
+.BgImg {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 50px;
-  background-image: url('~@/assets/img/Code1.svg');
+  background-image: linear-gradient(to right top, rgba(176, 192, 215, 0.4), rgb(11 22 39 / 80%)),
+   url('~@/assets/img/Kenting.jpg');
   background-repeat:no-repeat;
-  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0% 56px, 100% 56px, 100% 85%, 0% 100% );
   width: 100%;
   height: 100vh;
-  i {
-    color: #fff;
-    text-decoration: none;
-    font-size: 36px;
+  .Bgtext {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    color: rgb(247, 225, 225);
+    text-transform: uppercase;
   }
-}
-.row {
-  margin-right: 0;
-  margin-left: 0;
+  .BgText1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+  }
+  .BgText2 {
+    font-weight: 500;
+    font-size: 3rem;
+    letter-spacing: 20px;
+    word-spacing: 10px;
+  }
 }
 .PersonalProfile {
   display: flex;
@@ -104,8 +122,10 @@ export default {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    .FilePhotoCss {
+      margin: 0 auto;
+    }
     .FilePhoto {
       background-image: url(~@/assets/img/FilePhoto.jpg);
       background-position: center;
@@ -150,7 +170,7 @@ ul {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  li {
+  .worksImg {
     width: 300px;
     height: 200px;
     background-size: cover;
@@ -178,7 +198,7 @@ ul {
 }
 @media (max-width: 991px) {
   .WorkItem {
-    li {
+    .worksImg {
       .Overlay {
         max-width: 300px;
         height: 200px;
@@ -188,7 +208,7 @@ ul {
 }
 @media (max-width: 767px) {
   .WorkItem {
-    li {
+    .worksImg {
       .Overlay {
         width: 300px;
         height: 200px;
@@ -197,7 +217,7 @@ ul {
   }
 }
 
-.WorkItem li:hover .Overlay {
+.worksImg:hover .Overlay {
   transform: scale(1);
 }
 </style>

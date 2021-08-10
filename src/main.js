@@ -20,8 +20,8 @@ Vue.use(VeeValidate, {
     zhTW,
   },
 });
-// axios.defaults.withCredentials = true;
 Vue.config.productionTip = false;
+// axios.defaults.withCredentials = true;
 new Vue({
   router,
   i18n,

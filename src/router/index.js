@@ -27,6 +27,11 @@ export default new VueRouter({
       name: 'Login',
       component: () => import('@/views/Login.vue'),
     },
+    {
+      path: '/ClockIn',
+      name: 'ClockIn',
+      component: () => import('@/views/ClockIn.vue'),
+    },
     ],
   },
   {

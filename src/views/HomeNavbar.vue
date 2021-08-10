@@ -5,6 +5,9 @@
         <router-link to="/" class="RouterLink"
           ><h1 class="WebIcon">蚊子工具網</h1></router-link
         >
+        <router-link to="/" class="RouterLink"
+          ><h3 class="WebIcon">首頁</h3></router-link
+        >
       </div>
     </nav>
     <div class="Container bg-success">
@@ -34,10 +37,11 @@
   min-height: 100vh;
 }
 .navbar {
-  position: absolute;
+  position: fixed;
   width: 100%;
   padding: 0;
   height: 56px;
+  z-index: 100;
 }
 .MtMargin {
   margin-top: 56px;
