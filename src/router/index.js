@@ -28,7 +28,7 @@ export default new VueRouter({
       component: () => import('@/views/Login.vue'),
     },
     {
-      path: '/ClockIn',
+      path: '/ClockIn/:UserName',
       name: 'ClockIn',
       component: () => import('@/views/ClockIn.vue'),
     },
@@ -36,38 +36,7 @@ export default new VueRouter({
   },
   {
     path: '*',
-    redirect: '/',
+    redirect: '/Login',
   },
   ],
 });
-
-// const routes = [
-//   {
-//     path: "/",
-//     name: "HomeNavbar",
-//     component: HomeNavbar,
-//     children: [{
-//       path: "",
-//       name: "Home",
-//       component: () => import('@/views/Home.vue')
-//     },
-//     {
-//       path: "/Stock",
-//       name: "Stock",
-//       component: () => import('@/views/Stock.vue')
-//     },
-//     {
-//       path: "/TodoList",
-//       name: "TodoList",
-//       component: () => import('@/views/TodoList.vue')
-//     }
-//     ]
-//   },
-// ];
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes,
-// });
-
-// export default router;

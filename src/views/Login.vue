@@ -108,10 +108,17 @@ export default {
           // const api = 'http://localhost:3000/Login';
           vm.$http.post(api, vm.account).then((res) => {
             alert(res.data.meg);
+            this.RouterClock(res);
+            vm.account = {};
           });
-          vm.account = {};
         }
       });
+    },
+    RouterClock(res) {
+      const vm = this;
+      if (res.data.success) {
+        vm.$router.push(`/ClockIn/${this.account.number}`);
+      }
     },
     SignUp() {
       const vm = this;

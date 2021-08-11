@@ -56,7 +56,8 @@
 <script>
 import StockImg from '@/assets/img/Stock.png';
 import TodoImg from '@/assets/img/TodoList.png';
-import Login from '@/assets/img/Login.png';
+import LoginImg from '@/assets/img/Login.png';
+import ClockInImg from '@/assets/img/ClockInHome.png';
 
 export default {
   data() {
@@ -73,9 +74,14 @@ export default {
           title: 'TodoList',
         },
         {
-          img: Login,
+          img: LoginImg,
           link: '/Login',
           title: 'Login',
+        },
+        {
+          img: ClockInImg,
+          link: '/ClockIn',
+          title: 'ClockIn',
         },
       ],
     };
