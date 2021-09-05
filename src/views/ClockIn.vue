@@ -29,10 +29,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, key) in Record" :key="key">
+            <tr v-for="(item, key) in data" :key="key">
               <td>{{ item.UserName }}</td>
-              <td>{{ item.GoWorkTime}}</td>
-              <td>{{ item.OffWorkTime}}</td>
+              <td>{{ item.GoWorkTime }}</td>
+              <td>{{ item.OffWorkTime }}</td>
             </tr>
           </tbody>
         </table>
@@ -47,39 +47,76 @@ export default {
       UserName: '',
       Time: '',
       Record: [],
+      data: [],
       WorkCheck: false,
     };
+  },
+  watch: {
+    // data: {
+    //   handler: 'GetUser',
+    //   deep: true,
+    // },
+    // WorkCheck: {
+    //   handler: 'GetUser',
+    //   deep: true,
+    // },
   },
   methods: {
     GoToWork() {
       this.GetDate();
-      this.Record.push({
+      this.GetData();
+      this.data.push({
         UserName: this.UserName,
         GoWorkTime: this.Time,
         OffWorkTime: '',
       });
-      this.WorkCheck = true;
+      const PushRecord = JSON.stringify(this.data);
+      localStorage.setItem('Record', PushRecord);
+      this.GetUser();
+      // this.WorkCheck = true;
       // this.GOToWorkDate.push(this.Date);
       // console.log(this.GoToWorkDate);
     },
     GoOffWork() {
       this.GetDate();
-      this.Record.forEach((item, index) => {
+      this.data.forEach((item, index) => {
         if (item.OffWorkTime === '') {
-          this.Record[index].OffWorkTime = this.Time;
+          this.data[index].OffWorkTime = this.Time;
+          const PushRecord = JSON.stringify(this.data);
+          localStorage.setItem('Record', PushRecord);
+          this.data[index].OffWorkTime = this.Time;
         }
       });
+      this.GetUser();
       // this.Record.push({
       //   OffWorkTime: this.Time,
       // });
-      this.WorkCheck = false;
+      // this.WorkCheck = false;
+    },
+    GetData() {
+      this.data = JSON.parse(localStorage.getItem('Record')) || [];
+      this.fliterData();
+    },
+    fliterData() {
+      this.data = this.data.filter((item) => item.UserName === this.UserName);
     },
     GetDate() {
       this.Time = new Date().toLocaleString();
     },
+    GetUser() {
+      if (this.data.length === 0) {
+        this.WorkCheck = false;
+      } else if (this.data[this.data.length - 1].OffWorkTime === '') {
+        this.WorkCheck = true;
+      } else {
+        this.WorkCheck = false;
+      }
+    },
   },
   created() {
     this.UserName = this.$route.params.UserName;
+    this.GetData();
+    this.GetUser();
   },
 };
 </script>
